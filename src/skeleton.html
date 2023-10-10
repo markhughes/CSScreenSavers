@@ -1,0 +1,70 @@
+<html>
+
+<head>
+    <style>
+        body,
+        html {
+            padding: 0;
+            margin: 0;
+            background: black;
+        }
+    </style>
+    <!--data_load_options-->
+
+    <script>
+        window.RufflePlayer = window.RufflePlayer || {};
+        window.RufflePlayer.config = {
+            // Options affecting the whole page
+            "publicPath": undefined,
+            "polyfills": true,
+
+            // Options affecting files only
+            "allowScriptAccess": true,
+            "autoplay": "on",
+            "unmuteOverlay": "hidden",
+            "backgroundColor": null,
+            "wmode": "window",
+            "letterbox": "fullscreen",
+            "warnOnUnsupportedContent": true,
+            "contextMenu": "off",
+            "showSwfDownload": false,
+            "upgradeToHttps": window.location.protocol === "https:",
+            "maxExecutionDuration": 15,
+            "logLevel": "error",
+            "base": null,
+            "menu": true,
+            "salign": "",
+            "forceAlign": false,
+            "scale": "showAll",
+            "forceScale": false,
+            "frameRate": null,
+            "quality": "high",
+            "splashScreen": false,
+            "preferredRenderer": null,
+            "openUrlMode": "allow",
+            "allowNetworking": "all",
+            "favorFlash": true,
+            "parameters": ""
+        };
+
+    </script>
+
+
+    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+
+</head>
+
+<body>
+    <script>
+        let ruffle = window.RufflePlayer.newest();
+        let player = ruffle.createPlayer();
+
+        player.style.width = `100%`; // `760px
+        player.style.height = `100%`; // `440px
+
+        document.body.appendChild(player);
+        player.load(dataLoadOptions);
+    </script>
+</body>
+
+</html>
