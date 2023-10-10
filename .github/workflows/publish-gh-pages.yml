@@ -27,6 +27,9 @@ jobs:
       - name: Run Build Script
         run: node build.js swf/parachute.swf
 
+      - name: Copy index
+        run: cp src/index.html out/index.html
+
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
