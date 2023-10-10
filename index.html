@@ -1,0 +1,63 @@
+<html>
+
+<head>
+
+    <script>
+        function set(what) {
+            document.getElementById('frame').src = what;
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+        #links a {
+            display: inline-block;
+            padding: 10px;
+            background-color: #eee;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        #links a:hover {
+            background-color: #ddd;
+        }
+
+        #frame {
+            width: 100%;
+            height: 80%;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Coke Music Screensavers</h1>
+
+
+    <div id="links">
+        <a onclick="set('lights_out.html')">Lights Out</a>
+        <a onclick="set('lpad.html')">Launching Pad</a>
+        <a onclick="set('parachute.html')">Parachute</a>
+    </div>
+    <br />
+    <iframe src="about:Hello World!" id="frame"></iframe>
+    <script>
+        // Wait for the DOM to be fully loaded
+        document.addEventListener("DOMContentLoaded", function () {
+            var frame = document.getElementById('frame');
+            var frameDoc = frame.contentDocument || frame.contentWindow.document;
+
+            // Set the default content
+            frameDoc.open();
+            frameDoc.write('<style>body {            font-family: sans-serif;        }</style>Pick a screensaver, the HTML files are embedded with the flash file so you can actually use it if you want!');
+            frameDoc.close();
+        });
+    </script>
+</body>
+
+</html>
